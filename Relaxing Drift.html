@@ -35,10 +35,6 @@
       text-align: center;
       margin: 20px 0;
     }
-    .left {
-      text-align: left;
-      margin: 20px 0;
-    }
     .navbar {
       background-color: #333;
       overflow: hidden;
@@ -70,7 +66,16 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
     }
-    .faq p {
+    .mechanics, .download {
+      background: #fff;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .faq p, .mechanics p, .download p {
       margin: 10px 0;
     }
     .back-to-top {
@@ -125,12 +130,9 @@
   <div class="center">
     
     <h2>Welcome to Relaxing Drift</h2>
-    
-    <div class="left">
       <a href="Curce of Darknees.html">
         <img src="https://cdn3.iconfinder.com/data/icons/iconano-web-stuff/512/109-External-512.png" alt="New Games" style="width: 25px;">
       </a>
-    </div>
     <p>Experience thrilling car adventures and master the art of drifting!</p>
     <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2980490/header.jpg?t=1733657045" alt="Game Banner" style="width: 100%; max-width: 800px;">
   </div>
@@ -176,9 +178,13 @@
     <p><strong>Q: How often are updates released?</strong></p>
     <p>A: Updates are released 1 i's 2 monthly, bringing new features and improvements.</p>
   </div>
-  <div class="center">
+
+  <!-- Download Section -->
+  <div class="download" id="download">
+    <h2>Get the Game</h2>
+    <p>Embark on your survival journey in Curse of Darkness. Click the button below to purchase or download:</p>
     <button onclick="window.location.href='https://store.steampowered.com/app/2980490/Relaxing_Drift/';">
-      Go to Website
+      Download Now
     </button>
   </div>
 
