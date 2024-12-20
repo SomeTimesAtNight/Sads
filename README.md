@@ -50,7 +50,7 @@
 </head>
 <body>
   <div class="center">
-    <a href="Curce of Darknees.html">
+    <a href="SomeTimesAtNight.html">
       <img src="https://cdn3.iconfinder.com/data/icons/iconano-web-stuff/512/109-External-512.png" alt="Back to Curse of Darkness" style="width: 25px;">
     </a>
     <h2>Hello, I'm SomeTimeAtNight</h2>
