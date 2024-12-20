@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <meta name="description" content="Relaxing Drift: Experience thrilling car adventures, master the art of drifting, and collect luxury cars.">
+  <title>SomeTimeAtNight</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background-color: #ffffff;
+    }
+    .content, .about-developer {
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #000;
+      margin: 20px auto;
+      max-width: 800px;
+      color: #fff;
+    }
+    h2 {
+      color: #ffcc00;
+      text-shadow: 2px 2px #000;
+      text-align: center;
+    }
+    .about-developer {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    form {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+    }
+    label, p {
+      color: #fff;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 5px;
+    }
+    button {
+      background: #ffcc00;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Press Start 2P', cursive;
+    }
+    .social-buttons, .next-game-buttons {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .social-buttons a button, .next-game-buttons button {
+      margin: 0 10px;
+    }
+    .social-buttons a:nth-child(1) button { background: #FF0000; color: #fff; }
+    .social-buttons a:nth-child(2) button { background: #0088cc; color: #fff; }
+    .social-buttons a:nth-child(3) button { background: #000; color: #fff; }
+    .social-buttons a:nth-child(4) button { background: #E1306C; color: #fff; }
+    .next-game-buttons button:nth-child(1) { background: #4CAF50; }
+    .next-game-buttons button:nth-child(2) { background: #2196F3; }
+    .next-game-buttons button:nth-child(3) { background: #FF5722; }
+  </style>
+</head>
+<body>
+  <div class="about-developer">
+    <h2>About the Developers</h2>
+    <h2>SomeTimesAtNight</h2>
+    <p>Hello! we a bias Game Developers with a love for creating immersive gaming experiences. our mission is to craft games that entertain, challenge, and bring joy to players worldwide.</p>
+    <p>With expertise in game mechanics, storytelling, and cutting-edge technology, we aim to push the boundaries of what's possible in gaming. we latest projects include <em>Relaxing Drift</em> and <em>Curse of Darkness</em>, where we focus on unique gameplay and memorable experiences.</p>
+    <p>Let's create unforgettable adventures together!</p>
+  </div>
+  <div class="next-game-buttons" style="margin-top: 30px; text-align: center;">
+    <a href="Relaxing Drift.html">
+      <button style="background: none; border: none; cursor: pointer; margin: 0 10px;">
+        <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2980490/header.jpg?t=1733695582" alt="Game 1" style="width: 300px; border-radius: 20px;">
+      </button>
+    </a>
+    <a href="Curce of Darknees.html">
+      <button style="background: none; border: none; cursor: pointer; margin: 0 10px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsL0xyGjOeXhsgC6kYFjpZhbkKdax3tqxLTQ&s" alt="Game 2" style="width: 250px; border-radius: 20px;">
+      </button>
+    </a>
+    <a href="Shadows of the Past.html">
+      <button style="background: none; border: none; cursor: pointer; margin: 0 10px;">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/029/286/454/small/a-misty-forest-with-haunting-trees-shrouded-in-darkness-background-with-empty-space-for-text-photo.jpg" alt="Game 3" style="width: 250px; border-radius: 20px;">
+      </button>
+    </a>
+  </div>
+  <div class="social-buttons">
+    <a href="https://www.youtube.com" target="_blank"><button>YouTube</button></a>
+    <a href="https://t.me" target="_blank"><button>Telegram</button></a>
+    <a href="https://www.tiktok.com" target="_blank"><button>TikTok</button></a>
+    <a href="https://www.instagram.com" target="_blank"><button>Instagram</button></a>
+  </div>
+  
+  <div class="content" id="contact">
+    <h2>Contact Us</h2>
+    <form action="submit-form.php" method="POST">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+  
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+  
+      <label for="topic">Topic:</label><br>
+      <select id="topic" name="topic" required>
+        <option value="bug">Report a Bug</option>
+        <option value="feedback">Game Feedback</option>
+        <option value="support">Technical Support</option>
+        <option value="partnership">Partnership Inquiry</option>
+        <option value="other">Other</option>
+      </select><br><br>
+  
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="6" required></textarea><br><br>
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

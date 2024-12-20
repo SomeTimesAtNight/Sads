@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curse of Darkness: A survival game in a post-apocalyptic world. Discover thrilling adventures and dangerous monsters.">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <title>Shadows of the Past</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    h2, h3 {
+      color: #333;
+      text-align: center;
+    }
+    button {
+      font-size: 20px;
+      padding: 15px 20px;
+      background: linear-gradient(to right, #32CD32, #228B22);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    button:hover {
+      background: linear-gradient(to right, #228B22, #006400);
+      transform: scale(1.05);
+    }
+    button:active {
+      background: #006400;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transform: scale(0.98);
+    }
+    button:focus {
+      outline: 3px solid rgba(50, 205, 50, 0.7);
+      outline-offset: 2px;
+    }
+    .center {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .hero {
+      background: url('https://www.alemdaimaginacao.com/Relatos%201P/corredor_assombrado.JPG') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 220px 20px;
+    }
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .faq, .mechanics, .download {
+      background: linear-gradient(to bottom, #ffffff, #f9f9f9); /* Subtle gradient for depth */
+      padding: 25px;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 10px; /* More rounded corners for a modern design */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Softer, larger shadow for depth */
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    .faq:hover, .mechanics:hover, .download:hover {
+      transform: translateY(-5px); /* Slight upward movement on hover */
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover state */
+    }
+
+    .faq h2, .mechanics h2, .download h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .faq p, .mechanics p, .download p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #555; /* Softer text color for readability */
+      line-height: 1.6; /* Improved readability with line spacing */
+    }
+
+    .faq ul, .mechanics ul, .download ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .faq ul li, .mechanics ul li, .download ul li {
+      margin: 8px 0;
+      color: #444; /* Slightly darker list items for emphasis */
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      display: none;
+      background: rgb(66, 179, 68);
+      color: white;
+      border: none;
+      border-radius: 15%;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 25px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .back-to-top:hover {
+      background: darkslategray;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 300px; /* Ensures images maintain proportional sizes */
+      margin: 10px;
+      border-radius: 10px; /* Slightly more rounded corners for a modern look */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Increased shadow for better depth */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05); /* Slight zoom-in on hover */
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover for a pop-out effect */
+    }
+
+    @media (max-width: 768px) {
+      .gallery img {
+        max-width: 90%; /* Adjust image size for smaller screens */
+        margin: 5px auto; /* Center images on smaller devices */
+      }
+    }
+    .hero {
+      padding: 20px 20px;
+    }
+    #contact {
+    background: #fff;
+    padding: 30px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 10px; /* Rounded corners for modern design */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center-align content */
+  }
+
+  #contact h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form fields */
+  }
+
+  #contact label {
+    font-size: 16px;
+    color: #555;
+    text-align: left;
+  }
+
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Slight rounding for inputs */
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+
+  #contact input[type="text"]:focus,
+  #contact input[type="email"]:focus,
+  #contact textarea:focus {
+    border-color: #32CD32; /* Highlighted border on focus */
+    outline: none;
+  }
+
+  #contact textarea {
+    resize: none; /* Prevent resizing for consistent styling */
+  }
+
+  #contact button {
+    font-size: 18px;
+    padding: 12px 20px;
+    background: linear-gradient(to right, #32CD32, #228B22);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  #contact button:hover {
+    background: linear-gradient(to right, #228B22, #006400);
+    transform: scale(1.05);
+  }
+
+  #contact button:active {
+    transform: scale(0.98);
+    background: #006400;
+  }
+  }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Shadows of the Past</h1>
+    <p>An epic survival adventure awaits.</p>
+    <button onclick="window.location.href='#about';">Learn More</button>
+    <button onclick="window.location.href='#download';">Get the Game</button>
+  </div>
+
+  <!-- About Section -->
+  <div class="content" id="about">
+    <h2>About the Game</h2>
+    <p><strong>Shadows of the Past</strong> is a thrilling survival game where players must navigate a post-apocalyptic world filled with challenges and deadly monsters.</p>
+    <ul>
+      <li>Search for and gather essential resources.</li>
+      <li>Manage health, stamina, and noise levels to evade enemies.</li>
+      <li>Experience multiple paths and endings based on your decisions.</li>
+    </ul>
+  </div>
+
+  <!-- Game Mechanics Section -->
+  <div class="mechanics" id="mechanics">
+    <h2>Game Mechanics</h2>
+    <p>Discover unique features that set <strong>Shadows of the Past</strong> apart:</p>
+    <ul>
+      <li><strong>Stealth:</strong> Use the environment to sneak past enemies and stay silent.</li>
+      <li><strong>Dynamic AI:</strong> Enemie adapt to your behavior, making each encounter unique.</li>
+    </ul>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="gallery center" id="gallery">
+    <img src="" alt="Screenshot 1">
+    <img src="" alt="Screenshot 2">
+    <img src="" alt="Screenshot 3">
+    <img src="" alt="Screenshot 4">
+  </div>
+
+  <!-- FAQs Section -->
+  <div class="faq" id="faq">
+    <h2>FAQs</h2>
+    <p><strong>Q: Is the game free to play?</strong></p>
+    <p>A: No, the game is a paid experience.</p>
+    <p><strong>Q: Is the game multiplayer?</strong></p>
+    <p>A: Currently, the game is single-player only. Multiplayer support is under consideration for future updates.</p>
+    <p><strong>Q: What platforms is the game available on?</strong></p>
+    <p>A: <strong>Shadows of the Past</strong> is available on PC via Steam, with VR support planned for future releases.</p>
+  </div>
+
+  <!-- Download Section -->
+  <div class="download" id="download">
+    <h2>Get the Game</h2>
+    <p>Begin your survival adventure in <strong>Shadows of the Past</strong>. Click the button below to purchase or download:</p>
+    <button onclick="window.location.href='https://store.steampowered.com/app/3294220/Curse_of_Darkness';">
+      Download Now
+    </button>
+  </div>
+
+  <!-- Contact Us Section -->
+  <div class="content" id="contact">
+  <h2>Contact Us</h2>
+  <form action="submit-form.php" method="POST">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+  <!-- Back-to-Top Button -->
+  <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+
+  <script>
+    // Show back-to-top button when scrolling down
+    window.onscroll = function() {
+      const btn = document.querySelector('.back-to-top');
+      if (document.documentElement.scrollTop > 100) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>
