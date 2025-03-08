@@ -3,160 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <meta name="description" content="Relaxing Drift: Experience thrilling car adventures, master the art of drifting, and collect luxury cars.">
+  <link rel="stylesheet" href="styles.css">
   <title>Relaxing Drift</title>
-  <style>
-    /* Global Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    h2, h3 {
-      color: #333;
-      text-align: center;
-    }
-    button {
-      font-size: 20px;
-      padding: 15px 20px;
-      background-color: palegreen;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: cadetblue;
-      color: white;
-    }
-    .center {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .navbar {
-      background-color: #333;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-      text-align: center;
-      display: block;
-    }
-    .navbar a:hover {
-      background-color: cadetblue;
-    }
-    .content {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    .faq, .contact-us {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-    }
-    .mechanics, .download {
-      background: #fff;
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-    }
-    .faq p, .mechanics p, .download p {
-      margin: 10px 0;
-    }
-    .back-to-top {
-      position: fixed;
-      bottom: 15px;
-      right: 15px;
-      display: none;
-      background: rgb(54, 136, 67);
-      color: white;
-      border: none;
-      border-radius: 15%;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 25px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .back-to-top:hover {
-      background: darkslategray;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      margin: 10px;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .gallery img {
-        max-width: 100%;
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <div class="navbar">
-    <a href="#about">About</a>
-    <a href="#features">Features</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-  </div>
-
   <!-- Header Section -->
-  <div class="center">
-    
-    <h2>Welcome to Relaxing Drift</h2>
-      <a href="SomeTimesAtNight.html">
-        <img src="https://cdn3.iconfinder.com/data/icons/iconano-web-stuff/512/109-External-512.png" alt="New Games" style="width: 25px;">
-      </a>
-    <p>Experience thrilling car adventures and master the art of drifting!</p>
+  <div class="hero">
     <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2980490/header.jpg?t=1733657045" alt="Game Banner" style="width: 100%; max-width: 800px;">
+    <h1>Welcome to Relaxing Drift</h1>
+    <p>Start your adventure today! Master the art of drifting with thrilling car physics and explore breathtaking open-world environments.</p>
+    <button onclick="window.location.href='#about';">Learn More</button>
+    <button onclick="window.location.href='#download';">Get the Game</button>
+    
+    
   </div>
 
   <!-- About Section -->
   <div class="content" id="about">
-    <h2>About the Game</h2>
-    <p>Immerse yourself in an exciting world of car adventures, where you’ll feel the real adrenaline as you take the wheel of powerful cars, hone your driving skills, and master the art of drifting.</p>
+    <h2>About Relaxing Drift</h2>
+    <p>Relaxing Drift is a unique racing experience that combines thrilling car physics with open-world exploration. Drift your way through scenic landscapes, customize your dream car collection, and race to victory!</p>
     <ul>
-      <li>Dive into the in-game economy to purchase unique cars and achieve new milestones.</li>
-      <li>Build a collection of luxury cars and customize them to match your personal style.</li>
-      <li>Enjoy the freedom of driving at incredible speeds, discovering something new with every ride.</li>
+      <li>Engage in epic drift battles and prove your skills in a dynamic racing world.</li>
+      <li>Build your luxury car collection and fine-tune each one to perfection.</li>
+      <li>Explore vast environments full of secrets, challenges, and hidden rewards.</li>
     </ul>
   </div>
 
   <!-- Features Section -->
   <div class="content" id="features">
-    <h2>Features</h2>
+    <h2>Key Features</h2>
     <ul>
-      <li>Realistic car physics for an authentic driving experience.</li>
-      <li>Wide range of customizable vehicles.</li>
-      <li>Dynamic weather conditions to challenge your driving skills.</li>
-      <li>Open-world exploration with hidden rewards.</li>
-      <li>Multiplayer mode to compete with friends.</li>
+      <li>Realistic and dynamic car physics that give you total control over every drift.</li>
+      <li>Multiple cars to collect, each with unique attributes to enhance your experience.</li>
+      <li>Stunning open-world locations with immersive details and dynamic weather effects.</li>
+      <li>Multiplayer mode to compete against friends or players worldwide.</li>
+      <li>Frequent game updates with new challenges, cars, and game modes.</li>
     </ul>
   </div>
 
@@ -170,21 +51,22 @@
 
   <!-- FAQ Section -->
   <div class="faq" id="faq">
-    <h2>FAQ</h2>
-    <p><strong>Q: Is the game free to play?</strong></p>
-    <p>A: No</p>
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Q: Is Relaxing Drift free to play?</strong></p>
+    <p>A: No, Relaxing Drift is a paid game. It's available for purchase on Steam.</p>
     <p><strong>Q: Can I play Relaxing Drift on my mobile device?</strong></p>
-    <p>A: Currently, the game is available on PC. Mobile compatibility is under development.</p>
-    <p><strong>Q: How often are updates released?</strong></p>
-    <p>A: Updates are released 1 i's 2 monthly, bringing new features and improvements.</p>
+    <p>A: Currently, Relaxing Drift is only available on PC. We plan to introduce a mobile version in the future.</p>
+    <p><strong>Q: How often do you release updates?</strong></p>
+    <p>A: We release regular updates, typically once a month, with new features, cars, and content.</p>
   </div>
 
   <!-- Download Section -->
   <div class="download" id="download">
-    <h2>Get the Game</h2>
-    <p>Embark on your journey in Relaxing Drift. Click the button below to purchase or download:</p>
+    <h2>Get Relaxing Drift Now!</h2>
+    <p>Don't miss out on the adrenaline-fueled racing experience. Download Relaxing Drift today and start your journey!</p>
+    <iframe src="https://store.steampowered.com/widget/2980490/" frameborder="0" width="646" height="190"></iframe>
     <button onclick="window.location.href='https://store.steampowered.com/app/2980490/Relaxing_Drift/';">
-      Download Now
+      Download Relaxing Drift
     </button>
   </div>
 
@@ -192,14 +74,14 @@
   <div class="contact-us" id="contact">
     <h2>Contact Us</h2>
     <form action="submit-form.php" method="POST">
-      <label for="name">Name:</label><br>
+      <label for="name">Your Name:</label><br>
       <input type="text" id="name" name="name" required><br><br>
-      <label for="email">Email:</label><br>
+      <label for="email">Your Email:</label><br>
       <input type="email" id="email" name="email" required><br><br>
-      <label for="message">Message:</label><br>
+      <label for="message">Your Message:</label><br>
       <textarea id="message" name="message" rows="4" required></textarea><br><br>
-      <button type="submit">Submit</button>
-  </form>
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 
   <!-- Back-to-Top Button -->

@@ -1,0 +1,199 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  h2, h3 {
+    color: #333;
+    text-align: center;
+  }
+  button {
+    font-size: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(to right, #32CD32, #228B22);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  button:hover {
+    background: linear-gradient(to right, #228B22, #006400);
+    transform: scale(1.05);
+  }
+  button:active {
+    background: #006400;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+  }
+  button:focus {
+    outline: 3px solid rgba(50, 205, 50, 0.7);
+    outline-offset: 2px;
+  }
+  .center {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .hero {
+    color: rgb(58, 58, 58);
+    text-align: center;
+    padding: 220px 20px;
+  }
+  .content {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  .faq, .mechanics, .download {
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9); /* Subtle gradient for depth */
+    padding: 25px;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 10px; /* More rounded corners for a modern design */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Softer, larger shadow for depth */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  .faq:hover, .mechanics:hover, .download:hover {
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover state */
+  }
+
+  .faq h2, .mechanics h2, .download h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .faq p, .mechanics p, .download p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555; /* Softer text color for readability */
+    line-height: 1.6; /* Improved readability with line spacing */
+  }
+
+  .faq ul, .mechanics ul, .download ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+
+  .faq ul li, .mechanics ul li, .download ul li {
+    margin: 8px 0;
+    color: #444; /* Slightly darker list items for emphasis */
+  }
+  .back-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    display: none;
+    background: rgb(66, 179, 68);
+    color: white;
+    border: none;
+    border-radius: 15%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .back-to-top:hover {
+    background: darkslategray;
+  }
+  .gallery img {
+    width: 100%;
+    max-width: 300px; /* Ensures images maintain proportional sizes */
+    margin: 10px;
+    border-radius: 10px; /* Slightly more rounded corners for a modern look */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Increased shadow for better depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05); /* Slight zoom-in on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover for a pop-out effect */
+  }
+
+  @media (max-width: 768px) {
+    .gallery img {
+      max-width: 90%; /* Adjust image size for smaller screens */
+      margin: 5px auto; /* Center images on smaller devices */
+    }
+  }
+  .hero {
+    padding: 20px 20px;
+  }
+  #contact {
+  background: #fff;
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 10px; /* Rounded corners for modern design */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Center-align content */
+}
+
+#contact h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between form fields */
+}
+
+#contact label {
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Slight rounding for inputs */
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+  border-color: #32CD32; /* Highlighted border on focus */
+  outline: none;
+}
+
+#contact textarea {
+  resize: none; /* Prevent resizing for consistent styling */
+}
+
+#contact button {
+  font-size: 18px;
+  padding: 12px 20px;
+  background: linear-gradient(to right, #32CD32, #228B22);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+#contact button:hover {
+  background: linear-gradient(to right, #228B22, #006400);
+  transform: scale(1.05);
+}
+
+#contact button:active {
+  transform: scale(0.98);
+  background: #006400;
+}
