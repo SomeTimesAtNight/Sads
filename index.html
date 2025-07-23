@@ -122,19 +122,27 @@
     <a href="https://t.me/sometimesatnigh" target="_blank"><button>Telegram</button></a>
     <a href="https://www.tiktok.com/@sometimesatnigh?is_from_webapp=1&sender_device=pc" target="_blank"><button>TikTok</button></a>
   </div>
-  <div class="about-developer">
+    <div class="about-developer">
     <form action="https://formspree.io/f/mdkgavyr" method="POST">
-    <label>
-      Ваш Email:
-      <input type="email" name="email" required>
-    </label>
-    <br>
-    <label>
-      Повідомлення:
-      <textarea name="message" required></textarea>
-    </label>
-      <br>
-    <button type="submit">Надіслати</button>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="topic">Topic:</label><br>
+      <select id="topic" name="topic" required>
+        <option value="bug">Report a Bug</option>
+        <option value="feedback">Game Feedback</option>
+        <option value="support">Technical Support</option>
+        <option value="partnership">Partnership Inquiry</option>
+        <option value="other">Other</option>
+      </select><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <button type="submit">Send</button>
     </form>
   </div>
 </body>
