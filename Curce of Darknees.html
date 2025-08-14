@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Curse of Darknees — SomeTimesAtNight</title>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  /* ===== THEME: Liquid-Chrome + Neon Violet ===== */
+  :root{
+    --bg:#07070a; --bg2:#0c0e18; --text:#ecf1f7; --muted:#b6c0cd;
+    --chrome1:#eef2f7; --chrome2:#b7bec8; --chrome3:#8a93a0;
+    --violet:#c79bff; --violet-2:#8a5cff; --aqua:#72f7ff;
+    --line: rgba(255,255,255,.14);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; color:var(--text);
+    background: radial-gradient(1200px 900px at 80% -10%, #1b1e30 0%, #0c0f1a 50%, #07070a 100%),
+               radial-gradient(800px 700px at -10% 120%, #15192a 0%, transparent 70%);
+    font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    overflow-x:hidden;
+  }
+
+  .film{position:fixed; inset:0; z-index:-2; opacity:.6; pointer-events:none;
+    background:
+      repeating-linear-gradient( 0deg, rgba(255,255,255,.06) 0 1px, rgba(255,255,255,0) 1px 4px),
+      conic-gradient(from 0deg at 50% 50%, #212435, #15192a, #101423, #191d2e, #212435);
+    filter: contrast(108%) saturate(112%);
+  }
+  .glow{position:fixed; inset:-40%; z-index:-1; pointer-events:none; opacity:.25;
+    background: radial-gradient(circle at 30% 35%, var(--violet), transparent 60%),
+               radial-gradient(circle at 70% 70%, var(--aqua), transparent 55%);
+    filter: blur(90px);
+    animation: float 18s ease-in-out infinite alternate;
+  }
+  @keyframes float{ to{ transform: translate3d(-5%,2%,0) scale(1.04) } }
+
+  header{
+    padding:90px 20px 26px; text-align:center; border-bottom:1px solid var(--line);
+    background: linear-gradient(180deg, rgba(199,155,255,.10), rgba(199,155,255,0) 55%), linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0));
+  }
+  .logo{
+    margin:6px 0 10px; font-family:"Russo One", sans-serif; text-transform:uppercase; letter-spacing:.08em;
+    font-size: clamp(36px, 7vw, 88px); line-height:1;
+    background: linear-gradient(100deg, var(--chrome1), var(--chrome2) 22%, var(--chrome1) 40%, var(--chrome3) 65%, var(--chrome1));
+    -webkit-background-clip:text; background-clip:text; color:transparent; position:relative;
+  }
+  .logo::after{
+    content:""; position:absolute; inset:0; mix-blend-mode:screen; opacity:.45;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.9) 8%, transparent 16%) 0 0/220% 100% no-repeat;
+    animation: sweep 4.8s linear infinite;
+  }
+  @keyframes sweep{ to{ background-position: 220% 0 } }
+
+  .badges{display:flex; justify-content:center; gap:10px; flex-wrap:wrap}
+  .chip{
+    padding:8px 10px; border:1px solid rgba(255,255,255,.18); border-radius:10px; font-size:12px;
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); color:#e1ecff
+  }
+  .subtitle{color:var(--muted)}
+  .hero-cta{display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin:22px auto 8px}
+  .btn{
+    position:relative; padding:14px 18px; border-radius:12px; text-decoration:none; color:#f0f6ff; font-weight:800;
+    background:#101423; border:1px solid rgba(255,255,255,.16); box-shadow: 0 14px 36px rgba(0,0,0,.45);
+  }
+  .btn::before{
+    content:""; position:absolute; inset:-2px; border-radius:14px; z-index:-1;
+    background: conic-gradient(from 0deg, var(--violet), transparent 25%, var(--aqua), transparent 65%, var(--violet));
+    filter: blur(12px); opacity:.55; transition:.2s ease;
+  }
+  .btn:hover{ transform: translateY(-2px) } .btn:hover::before{opacity:.9}
+
+  .steam{border:0; width:100%; max-width:646px; height:190px; border-radius:12px; overflow:hidden; filter: drop-shadow(0 12px 32px rgba(0,0,0,.5))}
+
+  main{padding:40px 20px 90px}
+  section{max-width:1200px; margin:0 auto 56px}
+
+  .panel{
+    padding:22px; border-radius:16px; border:1px solid var(--line);
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    box-shadow: 0 30px 80px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.03);
+  }
+  h2{font-family:"Russo One", sans-serif; letter-spacing:.06em; margin:0 0 14px}
+
+  .split{display:grid; gap:18px; grid-template-columns: 1.1fr .9fr}
+  @media (max-width:920px){ .split{grid-template-columns:1fr} }
+
+  .gallery{
+    display:grid; gap:12px; grid-template-columns: repeat(12, 1fr);
+  }
+  .shot{
+    grid-column: span 6; aspect-ratio:16/9; border-radius:14px; overflow:hidden; position:relative;
+    border:1px solid var(--line);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+      repeating-linear-gradient( 0deg, rgba(255,255,255,.06) 0 1px, rgba(255,255,255,0) 1px 4px);
+    box-shadow: 0 18px 50px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.03);
+  }
+  .shot svg{position:absolute; inset:0; width:100%; height:100%}
+  @media (max-width:860px){ .shot{grid-column: span 12} }
+
+  .specs{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  @media (max-width:720px){ .specs{grid-template-columns:1fr} }
+  .spec{padding:14px; border:1px solid var(--line); border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02))}
+
+  footer{
+    padding:34px 20px 90px; text-align:center; color:#aeb8c6; border-top:1px solid var(--line);
+    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+  }
+  .link{color:#d7e7ff}
+</style>
+</head>
+<body>
+  <div class="film"></div>
+  <div class="glow"></div>
+
+  <header>
+    <div class="badges"><span class="chip">by SomeTimesAtNight</span></div>
+    <h1 class="logo">Curse of Darknees</h1>
+    <p class="subtitle">A post-apocalyptic survival adventure awaits you.</p>
+    <div class="hero-cta">
+      <a class="btn" href="https://store.steampowered.com/app/3294220/" target="_blank" rel="noopener">Open in Steam</a>
+      <a class="btn" href="#gallery">Screenshots</a>
+      <a class="btn" href="#features">Features</a>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:18px">
+      <iframe class="steam" src="https://store.steampowered.com/widget/3294220/" loading="lazy"></iframe>
+    </div>
+  </header>
+
+  <main>
+    <section id="features" class="split">
+      <div class="panel">
+        <h2>What's inside</h2>
+        <ul style="margin:0;padding-left:18px;color:#dce6f6;line-height:1.9">
+          <li>Search for car parts and gather resources.</strong></li>
+          <li><strong>**Stealth**: Sneak past monsters using the environment and reduce noise levels.</strong></li>
+          <li><strong>Monitor your health, stamina, and noise levels to avoid monsters.</strong></li>
+          <li><strong>**Dynamic AI**: Monsters adapt to your behavior, ensuring every encounter is unique.</strong></li>
+          <li><strong>Multiple paths and endings based on your decisions.</strong></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>Why Curse of Darknees</h2>
+        <p>is a tense survival game set in a post-apocalyptic world, where the player must piece together a wrecked car to survive while avoiding deadly monsters. Four different creatures roam the world, each with unique abilities that keep you on the edge of your seat.</p>
+        <div class="badges" style="justify-content:flex-start;margin-top:8px">
+          <span class="chip">multiplayer</span><span class="chip">60–120 FPS</span><span class="chip">Indi Horror and Survival</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="panel">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <div class="shot" title="Forest">
+          <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3294220/ss_44c6cdfd3e977fe2a3794b207ec56eca112519a2.600x338.jpg?t=1752865613" alt="Forest">
+        </div>
+        <div class="shot" title="Relic">
+          <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3294220/ss_a7a949a4a987c5aa0b73db9fa8faee872b2de6cf.600x338.jpg?t=1752865613" alt="Relic">
+        </div>
+        <div class="shot" title="Mansion">
+          <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3294220/ss_a744afedd13d350ef93ab5f2af1e05ac9144db47.600x338.jpg?t=1752865613" alt="Mansion">
+        </div>
+        <div class="shot" title="Only Tree">
+          <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3294220/d48df78fbb83c8a3820889466409f165e65e8a62/ss_d48df78fbb83c8a3820889466409f165e65e8a62.600x338.jpg?t=1752865613" alt="Only Tree">
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>System requirements</h2>
+      <div class="specs">
+        <div class="spec">
+          <strong>Minimal</strong>
+          <ul style="margin:8px 0 0;padding-left:18px;line-height:1.8;color:#dbe4f2">
+            <li>OC: Windows 7/8/10</li><li>CPU: Intel Core i3-2100 / AMD FX-6300</li><li>GPU: NVIDIA GTX 750 Ti / AMD Radeon R7 260X</li><li>RAM: 2 GB</li><li>Storage: 1 GB</li>
+          </ul>
+        </div>
+        <div class="spec">
+          <strong>Recommended</strong>
+          <ul style="margin:8px 0 0;padding-left:18px;line-height:1.8;color:#dbe4f2">
+            <li>OC: Windows 10/11</li><li>CPU: Intel Core i5-9600K / AMD Ryzen 5 3600</li><li>GPU: NVIDIA GTX 1060 / AMD Radeon RX 580</li><li>RAM: 8 GB</li><li>Storage: 1 GB</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>FAQs</h2>
+      <ul style="margin:0;padding-left:18px;color:#dce6f6;line-height:1.9">
+        <p><strong>Q: Is the game free to play?</strong></p>
+        <p>A: No</p>
+        <p><strong>Q: Is the game multiplayer?</strong></p>
+        <p>A: Currently, the game is single-player only. Multiplayer support is being considered for future updates.</p>
+        <p><strong>Q: What platforms is the game available on?</strong></p>
+        <p>A: Curse of Darkness is available on PC via Steam, with console releases planned.</p>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div style="margin-top:8px"><a class="btn" href="index.html">← To the studio website</a></div>
+  </footer>
+</body>
+</html>

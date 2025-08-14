@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SomeTimesAtNight — інді-студія</title>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  /* ===== THEME: Liquid-Chrome + Neon Violet ===== */
+  :root{
+    --bg:#07070a;
+    --bg2:#0a0b12;
+    --text:#ebedf3;
+    --muted:#b8c0cc;
+    --chrome1:#e8ecf1;
+    --chrome2:#aeb6c2;
+    --chrome3:#7e8793;
+    --violet:#c79bff;
+    --violet-2:#8a5cff;
+    --aqua:#72f7ff;
+    --line: rgba(255,255,255,.14);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; color:var(--text); background: radial-gradient(1100px 800px at 70% -10%, #181a2a 0%, #0a0b12 45%, #07070a 100%),
+              radial-gradient(900px 700px at -20% 120%, #161826 0%, transparent 70%);
+    font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    overflow-x:hidden;
+  }
+
+  /* Liquid chrome film */
+  .liquid{
+    position:fixed; inset:0; z-index:-2; opacity:.7; pointer-events:none;
+    background:
+      repeating-linear-gradient( 12deg, rgba(255,255,255,.06) 0 1px, rgba(255,255,255,0) 1px 6px),
+      conic-gradient(from 0deg at 50% 50%, #202330, #141624, #0d0f19, #1a1d2a, #202330);
+    filter: contrast(108%) saturate(112%);
+  }
+
+  /* moving neon sweep */
+  .sweep{
+    position:fixed; inset:-40%; z-index:-1; opacity:.25; pointer-events:none;
+    background: radial-gradient(circle at 30% 30%, var(--violet), transparent 60%),
+                radial-gradient(circle at 70% 60%, var(--aqua), transparent 55%);
+    filter: blur(90px);
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+  @keyframes drift{ to{ transform: translate3d(-6%,3%,0) scale(1.04) } }
+
+  header{
+    padding:92px 20px 56px; text-align:center; position:relative;
+    border-bottom:1px solid var(--line);
+    background:
+      linear-gradient(180deg, rgba(199,155,255,.10), rgba(199,155,255,0) 55%),
+      linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0));
+  }
+
+  .badge{
+    display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:999px;
+    border:1px solid rgba(255,255,255,.18); backdrop-filter: blur(6px);
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    box-shadow: 0 12px 40px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.04);
+    color:#dce8ff; font-size:14px;
+  }
+  .dot{width:8px; height:8px; border-radius:50%; background: radial-gradient(circle at 30% 30%, var(--aqua), #2bb6c0 60%, #0f5c60); box-shadow:0 0 16px var(--aqua);}
+
+  .logo{
+    margin:16px 0 10px; font-family:"Russo One", sans-serif; text-transform:uppercase; letter-spacing:.06em;
+    font-size: clamp(34px, 7vw, 84px); line-height:1;
+    background: linear-gradient( 100deg, var(--chrome1) 0%, var(--chrome2) 22%, var(--chrome1) 40%, var(--chrome3) 65%, var(--chrome1) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    position:relative;
+  }
+  .logo::after{ /* animated chrome highlight */
+    content:""; position:absolute; inset:0; mix-blend-mode:screen; opacity:.45;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.9) 8%, transparent 16%) 0 0/220% 100% no-repeat;
+    animation: sweep 4.8s linear infinite;
+  }
+  @keyframes sweep{ to{ background-position: 220% 0 } }
+
+  .strap{max-width:920px; margin:0 auto; color:var(--muted); font-size:clamp(14px,2.2vw,18px)}
+
+  .cta{margin:26px auto 0; display:flex; justify-content:center; gap:14px; flex-wrap:wrap}
+  .btn{
+    --bd: 1px;
+    position:relative; padding:14px 18px; border-radius:12px; text-decoration:none; color:#f0f6ff; font-weight:700;
+    background: #101423;
+    border: var(--bd) solid rgba(255,255,255,.16);
+    box-shadow: 0 14px 36px rgba(0,0,0,.45);
+    isolation:isolate;
+  }
+  .btn::before{ /* neon border */
+    content:""; position:absolute; inset:-2px; border-radius:14px; z-index:-1;
+    background: conic-gradient(from 0deg, var(--violet), transparent 20%, var(--aqua), transparent 60%, var(--violet));
+    filter: blur(12px); opacity:.55; transition: .2s ease;
+  }
+  .btn:hover{ transform: translateY(-2px) }
+  .btn:hover::before{ opacity:.9 }
+
+  main{padding:56px 20px 90px}
+  section{max-width:1200px; margin:0 auto 56px}
+
+  .grid{display:grid; gap:18px; grid-template-columns: repeat(12, 1fr)}
+  .card{
+    grid-column: span 4; padding:22px; border-radius:16px; position:relative; overflow:hidden;
+    background: linear-gradient( 180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.03);
+  }
+  .card::after{ /* chrome lip */
+    content:""; position:absolute; inset:-1px; pointer-events:none; mix-blend-mode:screen; opacity:.4;
+    background: linear-gradient(135deg, rgba(255,255,255,.35), transparent 25%), linear-gradient(-135deg, rgba(255,255,255,.18), transparent 45%);
+  }
+  .btst{
+    font-size: 30px;
+    color: #ffffff;
+  }
+  #contact {
+    max-width: 600px; /* обмежує ширину */
+    margin: 0 auto; /* центрує по горизонталі */
+  }
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 0px; /* відстань між полями */
+  }
+  #contact input,
+  #contact select,
+  #contact textarea,
+  #contact button {
+    width: 100%; /* щоб усі елементи займали всю ширину */
+  }
+  @media (max-width:980px){ .card{grid-column: span 6} }
+  @media (max-width:640px){ .card{grid-column: span 12} }
+
+  .role{color:#9fb3ff; text-transform:uppercase; letter-spacing:.12em; font-size:12px; margin-bottom:6px}
+  .card h3{margin:0 0 8px; font-family:"Russo One", sans-serif; letter-spacing:.02em; font-size:20px}
+  .card p{margin:0; color:#d4ddec; line-height:1.7}
+  .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+  .chip{padding:8px 10px; border-radius:10px; font-size:12px; color:#e6f2ff; border:1px solid rgba(255,255,255,.16); background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02))}
+
+  .split{display:grid; gap:18px; grid-template-columns: 1.2fr .8fr}
+  @media (max-width:960px){ .split{grid-template-columns:1fr} }
+
+  .panel{
+    padding:22px; border-radius:16px; border:1px solid var(--line);
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    box-shadow: 0 30px 80px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.03);
+  }
+  .panel h4{margin:0 0 12px; font-family:"Russo One", sans-serif; letter-spacing:.04em}
+
+  footer{
+    padding:34px 20px 90px; text-align:center; color:#aeb8c6; border-top:1px solid var(--line);
+    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+  }
+  a.inline{color:#cfe0ff}
+</style>
+</head>
+<body>
+  <div class="liquid"></div>
+  <div class="sweep"></div>
+
+  <header>
+    <div class="badge"><span class="dot"></span> Independent indie studio • night code</div>
+    <h1 class="logo">SomeTimesAtNight</h1>
+    <p class="strap">A team of three enthusiasts. We make games with a “liquid chrome” feel: soft shine, respect for silence, and mechanics that soothe.</p>
+    <div class="cta">
+      <a class="btn" href="#team">Team</a>
+      <a class="btn" href="#stack">Approach</a>
+      <a class="btn" href="#contact">Contacts</a>
+      <a class="btn" href="#start">Current Project</a>
+      <a class="btn" href="#finn">Finished Projects</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="team">
+      <div class="grid">
+        <article class="card">
+          <div class="role">Creative & Game Design & Code & Tech Art & 3D & Unity UI & Unity Animation</div>
+          <h3>Sad “Night Designer”</h3>
+          <p>System design, 3D models, levels, narrative. Small mechanics — big emotions. Collects sounds of night cities.</p>
+          <div class="chips"><spam class="chip">Unity UI</spam><spam class="chip">Unity Animation</spam><span class="chip">Unity</span><span class="chip">Level Art</span><span class="chip">UX Flow</span><span class="chip">C#</span><span class="chip">Blender</span></div>
+        </article>
+        <article class="card">
+          <div class="role">UI & Image</div>
+          <h3>Suslik “Shaders Girl”</h3>
+          <p>Graphic Elements, Script.</p>
+          <div class="chips"><span class="chip">Canvas</span></div>
+        </article>
+        <article class="card">
+          <div class="role">Audio</div>
+          <h3>Den “Mega Sound Creator”</h3>
+          <p>Records Sound.</p>
+          <div class="chips"><span class="chip">FMOD Studio</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack" class="split">
+      <div class="panel">
+        <h4>Approach</h4>
+        <p>Minimum fuss — maximum immersion. We play with metal textures, the rhythm of rain, and a sound-sharing engine.</p>
+        <p>We create gameplay loops that you want to return to: tactile visuals, responsive controls, clean UI.</p>
+      </div>
+      <div class="panel">
+        <h4>stack</h4>
+        <ul style="margin:0;padding-left:18px;color:#d7e2f2;line-height:1.9">
+          <li>Unity </li>
+          <li>Blender / Canvas</li>
+          <li>FMOD Studio, own field notes</li>
+          <li>GitHub Actions</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="start" class="panel">
+      <h4>Current Project</h4>
+      <p><strong>Shadows of the Past</strong> —This is a detective horror game where the player is immersed in a dark and mysterious atmosphere.</p>
+      <div class="cta">
+        <a class="btn" href="Shadows of the Past.html">Сторінка гри</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://store.steampowered.com/app/3474400/">Open in Steam</a>
+      </div>
+    </section>
+    <section id="finn"class="panel">
+      <h4>Finished Projects</h4>
+      <div class="panel">
+        <p><strong class="btst">Relaxing Drift</strong> —meditative drift arcade with night tracks.</p>
+        <div class="cta">
+          <a class="btn" href="Relaxing Drift.html">Сторінка гри</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://store.steampowered.com/app/2980490/">Open in Steam</a>
+        </div>
+      </div> 
+      <div class="panel">
+        <p><strong class="btst">Curce of Darknees</strong> —A post-apocalyptic survival adventure awaits you.</p>
+        <div class="cta">
+          <a class="btn" href="Curce of Darknees.html">Сторінка гри</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://store.steampowered.com/app/3294220/">Open in Steam</a>
+        </div>
+      </div> 
+    </section>
+    </div>
+    <div id="contact" class="panel">
+      <h1 class="logo">Report📢</h1>
+    <form action="https://formspree.io/f/mdkgavyr" method="POST">
+      <label for="name"><spam class="chip">Name✏️:</spam></label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email"><spam class="chip">Email📧:</spam></label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="topic"><spam class="chip">Topic📋:</spam></label><br>
+      <select id="topic" name="topic" required>
+        <option value="Report a Bug🚫">Report a Bug🚫</option>
+        <option value="Game Feedback🧾">Game Feedback🧾</option>
+        <option value="Technical Support📲">Technical Support📲</option>
+        <option value="Partnership Inquiry💼">Partnership Inquiry💼</option>
+        <option value="other">Other</option>
+      </select><br><br>
+
+      <label for="Games"><spam class="chip">Games🎮:</spam></label><br>
+      <select id="Games" name="Games" required>
+        <option value="other">Other</option>
+        <option value="Relaxing Drift🚗">Relaxing Drift🚗</option>
+        <option value="Curse of Darkness🌳">Curse of Darkness🌳</option>
+        <option value="Shadows of the Past🔦">Shadows of the Past🔦</option>
+      </select><br><br>
+
+      <label for="Message✉️"><spam class="chip">Message✉️:</spam></label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <button type="submit" class="btn">Send📩</button>
+    </form>
+    </div>
+  </main>
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17094130123"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17094130123');
+  </script>
+</body>
+</html>
