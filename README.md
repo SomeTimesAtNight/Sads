@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" tupe="text/css" hret="css/styles.css">
+  <meta name="description" content="Relaxing Drift: Experience thrilling car adventures, master the art of drifting, and collect luxury cars.">
+  <title>Relaxing Drift</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+    }
+    button {
+      font-size: 20px;
+      padding: 15px 20px;
+      background-color: palegreen;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: cadetblue;
+      color: white;
+    }
+    .center {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <a href="Curce of Darknees.html">
+      <img src="https://cdn3.iconfinder.com/data/icons/iconano-web-stuff/512/109-External-512.png" alt="Back to Curse of Darkness" style="width: 25px;">
+    </a>
+    <h2>Hello, I'm SomeTimeAtNight</h2>
+    <img src="https://i.pinimg.com/originals/44/83/f7/4483f7f51d2acd1ca51cd410431a7e82.png" alt="Logo" width="100">
+    <h2>Site For Game: Relaxing Drift</h2>
+    <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2980490/header.jpg?t=1733657045" alt="Game Banner">
+  </div>
+  <div class="content">
+    <h2>About the Game</h2>
+    <p>Immerse yourself in the world of car adventures, where you will feel the real adrenaline when you get behind the wheel of powerful cars, improve your driving skills, and master the art of drifting.</p>
+    <ul>
+      <li>Explore the world of in-game currency to buy unique cars and conquer new heights.</li>
+      <li>Collect a collection of luxury cars and customize them to suit your style.</li>
+      <li>Enjoy freedom and drive at incredible speeds, promising new experiences with every trip.</li>
+    </ul>
+    <p><strong>Note:</strong> The game is in development, so some features may not be available yet. Future updates will include new mechanics and improvements with each release.</p>
+  </div>
+  <div class="gallery center">
+    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2980490/ss_e3df29abdd555f0dc105f6c6550103c94aeecb2b.600x338.jpg?t=1728245807" alt="Screenshot 1">
+    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2980490/ss_5f007a42d11a88bf61b92cfb689d629430e9cb8d.600x338.jpg?t=1728245807" alt="Screenshot 2">
+    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2980490/ss_6a6566ddd43aa1b2ddd355ebcaa4f6b628d08714.600x338.jpg?t=1728245807" alt="Screenshot 3">
+    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2980490/ss_47e4f37a3026a9de7b29a2cc606246a74a08fb52.600x338.jpg?t=1728245807" alt="Screenshot 4">
+    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2980490/ss_01bcadc9051ca531447059754efc02b44da1c2a0.600x338.jpg?t=1728245807" alt="Screenshot 5">
+  </div>
+  <div class="center">
+    <button onclick="window.location.href='https://store.steampowered.com/app/2980490/Relaxing_Drift';">
+      Go to Website
+    </button>
+  </div>
+</body>
+</html>
