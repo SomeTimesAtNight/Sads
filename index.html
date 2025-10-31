@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SomeTimesAtNight — інді-студія</title>
 <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="icon" href="icon.jpg" type="image/x-icon">
 <style>
-  /* ===== THEME: Liquid-Chrome + Neon Violet ===== */
   :root{
     --bg:#07070a;
     --bg2:#0a0b12;
@@ -30,7 +28,6 @@
     overflow-x:hidden;
   }
 
-  /* Liquid chrome film */
   .liquid{
     position:fixed; inset:0; z-index:-2; opacity:.7; pointer-events:none;
     background:
@@ -39,7 +36,6 @@
     filter: contrast(108%) saturate(112%);
   }
 
-  /* moving neon sweep */
   .sweep{
     position:fixed; inset:-40%; z-index:-1; opacity:.25; pointer-events:none;
     background: radial-gradient(circle at 30% 30%, var(--violet), transparent 60%),
@@ -73,7 +69,7 @@
     -webkit-background-clip:text; background-clip:text; color:transparent;
     position:relative;
   }
-  .logo::after{ /* animated chrome highlight */
+  .logo::after{ 
     content:""; position:absolute; inset:0; mix-blend-mode:screen; opacity:.45;
     background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.9) 8%, transparent 16%) 0 0/220% 100% no-repeat;
     animation: sweep 4.8s linear infinite;
@@ -91,7 +87,7 @@
     box-shadow: 0 14px 36px rgba(0,0,0,.45);
     isolation:isolate;
   }
-  .btn::before{ /* neon border */
+  .btn::before{ 
     content:""; position:absolute; inset:-2px; border-radius:14px; z-index:-1;
     background: conic-gradient(from 0deg, var(--violet), transparent 20%, var(--aqua), transparent 60%, var(--violet));
     filter: blur(12px); opacity:.55; transition: .2s ease;
@@ -108,7 +104,7 @@
     background: linear-gradient( 180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
     border:1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.03);
   }
-  .card::after{ /* chrome lip */
+  .card::after{ 
     content:""; position:absolute; inset:-1px; pointer-events:none; mix-blend-mode:screen; opacity:.4;
     background: linear-gradient(135deg, rgba(255,255,255,.35), transparent 25%), linear-gradient(-135deg, rgba(255,255,255,.18), transparent 45%);
   }
@@ -117,19 +113,19 @@
     color: #ffffff;
   }
   #contact {
-    max-width: 600px; /* обмежує ширину */
-    margin: 0 auto; /* центрує по горизонталі */
+    max-width: 600px;
+    margin: 0 auto;
   }
   #contact form {
     display: flex;
     flex-direction: column;
-    gap: 0px; /* відстань між полями */
+    gap: 0px;
   }
   #contact input,
   #contact select,
   #contact textarea,
   #contact button {
-    width: 100%; /* щоб усі елементи займали всю ширину */
+    width: 100%;
   }
   @media (max-width:980px){ .card{grid-column: span 6} }
   @media (max-width:640px){ .card{grid-column: span 12} }
@@ -185,13 +181,13 @@
         </article>
         <article class="card">
           <div class="role">UI & Image</div>
-          <h3>Des “Shaders Girl”</h3>
+          <h3>Suslik “Shaders Girl”</h3>
           <p>Graphic Elements, Script.</p>
           <div class="chips"><span class="chip">Canvas</span></div>
         </article>
         <article class="card">
           <div class="role">Audio</div>
-          <h3>Denys_jew “Mega Sound Creator”</h3>
+          <h3>Den “Mega Sound Creator”</h3>
           <p>Records Sound.</p>
           <div class="chips"><span class="chip">FMOD Studio</span></div>
         </article>
@@ -217,10 +213,10 @@
 
     <section id="start" class="panel">
       <h4>Current Project</h4>
-      <p><strong>Shadows of the Past</strong> —This is a detective horror game where the player is immersed in a dark and mysterious atmosphere.</p>
+      <p><strong>The Hallowed Echo</strong> —? ? ?.</p>
       <div class="cta">
-        <a class="btn" href="Shadows of the Past.html">Сторінка гри</a>
-        <a class="btn" target="_blank" rel="noopener" href="https://store.steampowered.com/app/3474400/">Open in Steam</a>
+        <a class="btn" href="The Hallowed Echo.html">Game page</a>
+        <a class="btn" target="_blank" rel="noopener" href="">Open in Steam</a>
       </div>
     </section>
     <section id="finn"class="panel">
@@ -228,15 +224,36 @@
       <div class="panel">
         <p><strong class="btst">Relaxing Drift</strong> —meditative drift arcade with night tracks.</p>
         <div class="cta">
-          <a class="btn" href="Relaxing Drift.html">Сторінка гри</a>
+          <a class="btn" href="Relaxing Drift.html">Game page</a>
           <a class="btn" target="_blank" rel="noopener" href="https://store.steampowered.com/app/2980490/">Open in Steam</a>
         </div>
       </div> 
       <div class="panel">
         <p><strong class="btst">Curce of Darknees</strong> —A post-apocalyptic survival adventure awaits you.</p>
         <div class="cta">
-          <a class="btn" href="Curce of Darknees.html">Сторінка гри</a>
+          <a class="btn" href="Curce of Darknees.html">Game page</a>
           <a class="btn" target="_blank" rel="noopener" href="https://store.steampowered.com/app/3294220/">Open in Steam</a>
+        </div>
+      </div>
+      <div class="panel">
+        <p><strong class="btst">Shadows of the Past</strong> —This is a detective horror game where the player is immersed in a dark and mysterious atmosphere.</p>
+        <div class="cta">
+          <a class="btn" href="Shadows of the Past.html">Game page</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://store.steampowered.com/app/3474400/">Open in Steam</a>
+        </div>
+      </div>  
+      <div class="panel">
+        <p><strong class="btst">The Beast in the Silent Valley</strong> —A forgotten village, cut off from civilization.</p>
+        <div class="cta">
+          <a class="btn" href="The Beast in the Silent Valley.html">Game page</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://store.steampowered.com/app/3184570/">Open in Steam</a>
+        </div>
+      </div> 
+      <div class="panel">
+        <p><strong class="btst">Keyboard Warrior Simulator</strong>— fight internet trolls by typing key combinations quickly.</p>
+        <div class="cta">
+          <a class="btn" href="Keyboard Warrior Simulator.html">Game page</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://store.steampowered.com/app/3480540/">Open in Steam</a>
         </div>
       </div> 
     </section>
